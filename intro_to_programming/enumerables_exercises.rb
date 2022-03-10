@@ -82,3 +82,41 @@ end
   
 puts format_name("chase WILSON") # => "Chase Wilson"
 puts format_name("brian CrAwFoRd scoTT") # => "Brian Crawford Scott"
+
+
+# Write a method is_valid_name that takes in a string and returns a boolean indicating whether or not it is a valid name.
+def is_valid_name(str)
+    names = str.split(" ")
+    length = names.length
+  
+    # Add 1 to count each time a name matches proper syntax
+    # If length and count are the same, it's a proper name
+    count = 0
+    names.each do |name|
+        if name == format_word(name)
+            count += 1
+    end
+end
+  
+    return false if length <= 1
+    return false if count != length
+    true
+end
+
+# format_word method from previous exercise
+def format_word(word)
+    new_word = []
+    word.each_char.with_index do |char, i|
+        if i == 0
+            new_word << char.upcase
+        else
+            new_word << char.downcase
+        end
+    end
+    new_word.join("")
+end
+
+puts is_valid_name("Kush Patel")       # => true
+puts is_valid_name("Daniel")           # => false
+puts is_valid_name("Robert Downey Jr") # => true
+puts is_valid_name("ROBERT DOWNEY JR") # => false

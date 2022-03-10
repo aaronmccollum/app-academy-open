@@ -148,3 +148,31 @@ def is_valid_email(str)
     return false if period_count != 1
     true
 end
+
+
+# Write a method reverse_words that takes in a sentence string and returns the sentence with the order of the characters in each word reversed.
+# Note that we need to reverse the order of characters in the words, do not reverse the order of words in the sentence.
+def reverse_words(sent)
+    sent_array = sent.split(" ")
+    answer = []
+    sent_array.each { |word| answer << word.reverse }
+    answer.join(" ")
+end
+
+puts reverse_words('keep coding') # => 'peek gnidoc'
+puts reverse_words('simplicity is prerequisite for reliability') # => 'yticilpmis si etisiuqererp rof ytilibailer'
+
+
+# Write a method rotate_array that takes in an array and a number. The method should return the array after rotating
+# the elements the specified number of times. A single rotation takes the last element of the array and moves it to the front.
+def rotate_array(arr, num)
+    num.times do
+  	    last_word = arr.pop()
+        arr.unshift(last_word)
+    end
+  
+    arr
+end
+
+print rotate_array([ "Matt", "Danny", "Mashu", "Matthias" ], 1) # => [ "Matthias", "Matt", "Danny", "Mashu" ]
+print rotate_array([ "a", "b", "c", "d" ], 2) # => [ "c", "d", "a", "b" ]

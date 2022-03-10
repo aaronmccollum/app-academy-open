@@ -120,3 +120,31 @@ puts is_valid_name("Kush Patel")       # => true
 puts is_valid_name("Daniel")           # => false
 puts is_valid_name("Robert Downey Jr") # => true
 puts is_valid_name("ROBERT DOWNEY JR") # => false
+
+
+# Write a method is_valid_email that takes in a string and returns a boolean indicating whether or not it is a valid email address.
+def is_valid_email(str)
+    # Check for @ sign by splitting str at @ sign. Only length of 2 is allowed
+    if str.include?("@")
+        segments = str.split("@")
+    else
+        return false
+    end
+
+    # Return false if first segment contains numbers
+    segments[0].each_char { |char| return false if "0123456789".include?(char) }
+  
+    # Ensure only one period dot after the @ sign (in the second segment)
+    period_count = 0
+    segments[1].each_char do |char|
+        if char == "."
+            period_count += 1
+        end
+    end
+    
+    # False statements to ensure requirements are met. Return true if no false return occurs
+    return false if segments.length != 2
+    return false if segments[0] != segments[0].downcase
+    return false if period_count != 1
+    true
+end

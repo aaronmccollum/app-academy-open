@@ -41,3 +41,14 @@ def cat_builder(name_str, color_str, age_num)
     cat_hash["age"] = age_num
     cat_hash
 end
+
+
+# Write a method ae_count that takes in a string and returns a hash containing the number of a's and e's in the string.
+# Assume the string contains only lowercase characters.
+def ae_count(str)
+    ae_hash = Hash.new(0)
+    
+    str.each_char { |char| ae_hash[char] += 1 if char == "a" || char == "e" }
+  
+    ae_hash.sort_by { |k, v| k }.to_h
+end

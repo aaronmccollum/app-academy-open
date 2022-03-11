@@ -31,3 +31,13 @@ def retrieve_values(hash1, hash2, key)
     hash2.each { |k, v| answer << hash2[key] if k == key }
     answer
 end
+
+
+# Write a method cat_builder that takes in a name, color, and age. The method should return a hash representing a cat with those values.
+def cat_builder(name_str, color_str, age_num)
+    cat_hash = Hash.new()
+    cat_hash["name"] = name_str
+    cat_hash["color"] = color_str
+    cat_hash["age"] = age_num
+    cat_hash
+end

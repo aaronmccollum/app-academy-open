@@ -16,9 +16,7 @@ end
 def word_lengths(sentence)
     words = sentence.split(" ")
     words_hash = Hash.new(0)
-    
     words.each { |word| words_hash[word] = word.length }
-    
     words_hash
 end
 
@@ -47,9 +45,7 @@ end
 # Assume the string contains only lowercase characters.
 def ae_count(str)
     ae_hash = Hash.new(0)
-    
     str.each_char { |char| ae_hash[char] += 1 if char == "a" || char == "e" }
-  
     ae_hash.sort_by { |k, v| k }.to_h
 end
 
@@ -59,4 +55,13 @@ def element_count(arr)
     count_hash = Hash.new(0)
     arr.each { |ele| count_hash[ele] += 1 }
     count_hash
+end
+
+
+# Write a method select_upcase_keys that takes in a hash and returns a new hash containing key-value pairs of the original hash
+# that had uppercase keys. You can assume that the keys will always be strings.
+def select_upcase_keys(hash)
+    upcase_hash = Hash.new()
+    hash.each { |k, v| upcase_hash[k] = v if k == k.upcase }
+    upcase_hash
 end

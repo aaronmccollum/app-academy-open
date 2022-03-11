@@ -52,3 +52,11 @@ def ae_count(str)
   
     ae_hash.sort_by { |k, v| k }.to_h
 end
+
+
+# Write a method element_count that takes in an array and returns a hash representing the count of each element in the array.
+def element_count(arr)
+    count_hash = Hash.new(0)
+    arr.each { |ele| count_hash[ele] += 1 }
+    count_hash
+end

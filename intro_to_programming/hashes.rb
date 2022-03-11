@@ -21,3 +21,13 @@ def word_lengths(sentence)
     
     words_hash
 end
+
+
+# Write a method retrieve_values that takes in two hashes and a key. The method should
+# return an array containing the values from the two hashes that correspond with the given key.
+def retrieve_values(hash1, hash2, key)
+    answer = []
+    hash1.each { |k, v| answer << hash1[key] if k == key }
+    hash2.each { |k, v| answer << hash2[key] if k == key }
+    answer
+end

@@ -66,3 +66,27 @@ def two_d_translate(arr)
     end
     flat_array
 end
+
+
+# Write a method array_translate that takes in an array whose elements alternate between words and numbers.
+# The method should return a string where each word is repeated the number of times that immediately follows in the array.
+def array_translate(array)
+    answer = []
+    
+    array.each_with_index do |ele, idx|
+        if is_even?(idx) || idx == 0
+            array[idx + 1].times do
+                answer << ele
+            end
+        else
+            next
+        end
+    end
+  
+    answer.join("")
+end
+# Helper function that returns 'true' for even numbers
+def is_even?(num)
+    return true if num % 2 == 0
+    false
+end

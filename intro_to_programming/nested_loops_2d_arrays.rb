@@ -90,3 +90,35 @@ def is_even?(num)
     return true if num % 2 == 0
     false
 end
+
+
+# Write a method pig_latin_word that takes in a word string and translates the word into pig latin.
+def pig_latin_word(word)
+    vowels = "aeiou"
+    chars = word.split("")
+    
+    # For words that start with a vowel, add 'yay' to the end
+    if vowels.include?(word[0])
+        chars.push("yay")
+        return chars.join("")
+    end
+    
+    # for words that start with a nonvowel, move all letters before the first vowel 
+    # to the end of the word and add 'ay'
+    answer = []
+    part = []
+    chars.each_with_index do |ele, i|
+        # Slice first vowel to end of chars array and save in "part" variable
+        if vowels.include?(ele)
+            length = chars.length - i
+            part = chars.slice(i, length)
+            break
+        # Push non-vowel into answer
+        else
+            answer << ele
+        end
+    end
+    # Insert part array into answer at the front, join into a string, then add "ay" at the end
+    answer.unshift(part).join("") + "ay"
+end
+  

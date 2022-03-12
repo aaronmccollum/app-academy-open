@@ -18,3 +18,10 @@ def yell_sentence(sent)
     yelled_words = sent_arr.map { |word| word.upcase + "!" }
     yelled_words.join(" ")
 end
+
+
+# Write a method whisper_words that takes in an array of words and returns a new array containing a whispered version of each word.
+# Example: whisper_words(["KEEP", "The", "NOISE", "down"]) # => ["keep...", "the...", "noise...", "down..."]
+def whisper_words(words)
+    words.map { |word| word.downcase + "..." }
+end

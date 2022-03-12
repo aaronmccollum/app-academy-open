@@ -44,3 +44,19 @@ def last_index(str, char)
         i -= 1
     end
 end
+
+
+# Write a method most_vowels that takes in a sentence string and returns the word of the sentence that contains the most vowels.
+def most_vowels(sentence)
+    words = sentence.split(" ")
+    vowels = "aeiou"
+    vowel_count = Hash.new(0)
+    
+    words.each do |word|
+        word.each_char { |char| vowel_count[word] += 1 if vowels.include?(char) }
+    end
+    
+    vowel_count.sort[-1][0]
+end
+
+

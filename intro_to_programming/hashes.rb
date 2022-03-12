@@ -114,3 +114,11 @@ def unique_elements(arr)
 end
 
 
+# Write a method element_replace that takes in an array and a hash. The method should return a new array
+# where elements of the original array are replaced with their corresponding values in the hash.
+def element_replace(arr, hash)
+    arr.each_with_index do |ele, idx|
+        arr[idx] = hash[ele] if hash.has_key?(ele)
+    end
+    arr
+end

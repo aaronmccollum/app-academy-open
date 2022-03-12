@@ -65,3 +65,21 @@ def select_upcase_keys(hash)
     hash.each { |k, v| upcase_hash[k] = v if k == k.upcase }
     upcase_hash
 end
+
+
+# Write a method hand_score that takes in a string representing a hand of cards and returns it's total score. You can assume the letters
+# in the string are only A, K, Q, J. A is worth 4 points, K is 3 points, Q is 2 points, and J is 1 point.
+# The letters of the input string not necessarily uppercase.
+def hand_score(hand)
+    hand_hash = Hash.new(0)
+    hand.each_char { |char| hand_hash[char.upcase] += 1 }
+    
+    hand_hash["A"] *= 4 if hand_hash.has_key?("A")
+    hand_hash["K"] *= 3 if hand_hash.has_key?("K")
+    hand_hash["Q"] *= 2 if hand_hash.has_key?("Q")
+    hand_hash["J"] *= 1 if hand_hash.has_key?("J")
+    
+    sum = 0
+    hand_hash.each_value { |val| sum += val }
+    sum
+end

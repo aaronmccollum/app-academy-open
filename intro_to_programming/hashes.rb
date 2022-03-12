@@ -83,3 +83,15 @@ def hand_score(hand)
     hand_hash.each_value { |val| sum += val }
     sum
 end
+
+
+# Write a method frequent_letters that takes in a string and returns an array containing the characters that 
+# appeared more than twice in the string.
+def frequent_letters(string)
+    freq_arr = []
+    freq_hash = Hash.new(0)
+    # Create a char with each letter and frequency, then push char to array if value > 2
+    string.each_char { |char| freq_hash[char] += 1 }
+    freq_hash.each { |k, v| freq_arr << k if v > 2 }
+    freq_arr
+end

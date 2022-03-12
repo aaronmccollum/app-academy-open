@@ -9,3 +9,12 @@ end
 def map_by_key(arr, key)
     arr.map { |hash| hash[key] }
 end
+
+
+# Write a method yell_sentence that takes in a sentence string and returns a new sentence where every word is yelled.
+# Example: yell_sentence("I have a bad feeling about this") #=> "I! HAVE! A! BAD! FEELING! ABOUT! THIS!"
+def yell_sentence(sent)
+    sent_arr = sent.split(" ")
+    yelled_words = sent_arr.map { |word| word.upcase + "!" }
+    yelled_words.join(" ")
+end

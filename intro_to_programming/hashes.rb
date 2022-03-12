@@ -103,3 +103,14 @@ def hash_to_pairs(hash)
     hash.each { |k, v| pairs << [k, v] }
     pairs
 end
+
+
+# Write a method unique_elements that takes in an array and returns a new array where all duplicate elements are removed. 
+# Solve this using a hash.
+def unique_elements(arr)
+    hash_letters = Hash.new(0)
+    arr.each { |ele| hash_letters[ele] += 1 }
+    hash_letters.keys
+end
+
+

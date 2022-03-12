@@ -95,3 +95,11 @@ def frequent_letters(string)
     freq_hash.each { |k, v| freq_arr << k if v > 2 }
     freq_arr
 end
+
+
+# Write a method hash_to_pairs that takes in a hash and returns a 2D array representing each key-value pair of the hash.
+def hash_to_pairs(hash)
+    pairs = Array.new()
+    hash.each { |k, v| pairs << [k, v] }
+    pairs
+end

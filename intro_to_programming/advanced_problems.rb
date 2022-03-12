@@ -25,3 +25,11 @@ end
 def whisper_words(words)
     words.map { |word| word.downcase + "..." }
 end
+
+
+# Write a method o_words that takes in a sentence string and returns an array of the words that contain an "o". 
+# Use select in your solution!
+def o_words(sentence)
+    words = sentence.split(" ")
+    words.select { |word| word.include?("o") }
+end

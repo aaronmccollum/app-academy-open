@@ -106,3 +106,19 @@ def prime?(num)
     return true if count == 1
     false
 end
+
+
+# Write a method greatest_factor_array that takes in an array of numbers and returns a new array 
+# where every even number is replaced with it's greatest factor.
+# A greatest factor is the largest number that divides another with no remainder.
+# For example the greatest factor of 16 is 8.
+def greatest_factor_array(arr)
+    factor_arr = arr.map do |num|
+        if num % 2 == 0
+            num = num / 2
+        else
+            num
+        end
+    end
+    factor_arr
+end

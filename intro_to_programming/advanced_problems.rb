@@ -130,3 +130,17 @@ def perfect_square?(num)
     (2..num).each { |n| return true if num / n.to_f == n }
     false
 end
+
+
+# Write a method triple_sequence that takes in two numbers, start and length. The method should return an array
+# representing a sequence that begins with start and is length elements long. 
+# In the sequence, every element should be 3 times the previous element.
+def triple_sequence(start, length)
+    answer_arr = Array.new()
+    num = start
+    length.times do
+        answer_arr << num
+        num *= 3
+    end
+    answer_arr
+end

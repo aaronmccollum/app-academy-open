@@ -144,3 +144,26 @@ def triple_sequence(start, length)
     end
     answer_arr
 end
+
+
+# Summation Sequence
+# Discription can be found at: https://open.appacademy.io/learn/full-stack-online/intro-to-programming/summation-sequence
+def summation_sequence(start, length)
+    summation_arr = Array.new()
+    num = start
+    length.times do
+        summation_arr << num
+        num = summation(num)
+    end
+    summation_arr
+end
+  
+def summation(num)
+    sum = 0
+    i = 1
+    while i <= num
+        sum += i
+        i += 1
+    end
+    sum
+end

@@ -72,3 +72,19 @@ def prime?(num)
     return true if count == 1
     false
 end
+
+
+# Write a method pick_primes that takes in an array of numbers and returns a new array containing only the prime numbers.
+def pick_primes(numbers)
+    numbers.select { |num| prime?(num) }
+end
+  
+# Helper function from last exercise
+def prime?(num)
+    count = 0
+    range = (2..num).to_a
+    range.each { |ele| count += 1 if num % ele == 0 }
+    return true if num == 1
+    return true if count == 1
+    false
+end

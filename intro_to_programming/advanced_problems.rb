@@ -88,3 +88,21 @@ def prime?(num)
     return true if count == 1
     false
 end
+
+
+# Write a method prime_factors that takes in a number and returns an array containing all of the prime factors of the given number.
+def prime_factors(num)
+    range = (2..num)
+    prime_range = range.select { |n| prime?(n) }
+    prime_factors = prime_range.select { |pnum| num % pnum == 0 }
+    prime_factors
+end
+  
+def prime?(num)
+    count = 0
+    range = (2..num).to_a
+    range.each { |ele| count += 1 if num % ele == 0 }
+    return true if num == 1
+    return true if count == 1
+    false
+end

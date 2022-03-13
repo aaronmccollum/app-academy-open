@@ -60,3 +60,15 @@ def most_vowels(sentence)
 end
 
 
+# Write a method prime? that takes in a number and returns a boolean, indicating whether the number is prime.
+# A prime number is only divisible by 1 and itself.
+def prime?(num)
+    count = 0
+    range = (2..num).to_a
+  
+    range.each { |ele| count += 1 if num % ele == 0 }
+    
+    return true if num == 1
+    return true if count == 1
+    false
+end

@@ -122,3 +122,11 @@ def greatest_factor_array(arr)
     end
     factor_arr
 end
+
+
+# Write a method perfect_square? that takes in a number and returns a boolean indicating whether it is a perfect square.
+# A perfect square is a number that results from multiplying a number by itself.
+def perfect_square?(num)
+    (2..num).each { |n| return true if num / n.to_f == n }
+    false
+end

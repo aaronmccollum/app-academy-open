@@ -235,3 +235,15 @@ def double_letter_count(string)
     end
     count
 end
+
+
+# Write a method adjacent_sum that takes in an array of numbers and returns a new array containing the sums
+# of adjacent numbers in the original array. See the examples.
+def adjacent_sum(arr)
+    answer = Array.new()
+    arr.each_with_index do |num, i|
+        break if i == (arr.length - 1)
+        answer << arr[i] + arr[i+1]
+    end
+    answer
+end

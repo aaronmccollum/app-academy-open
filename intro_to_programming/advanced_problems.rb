@@ -247,3 +247,26 @@ def adjacent_sum(arr)
     end
     answer
 end
+
+
+# Pyramid Sum
+# Description: https://open.appacademy.io/learn/full-stack-online/intro-to-programming/pyramid-sum
+def pyramid_sum(base)
+    answer = [base]
+    i = 0
+    while i < base.length - 1
+        answer.unshift(sum_ele(answer[0]))
+        i += 1
+    end
+    answer
+end
+  
+def sum_ele(arr)
+    answer = Array.new()
+    arr.each_with_index do |num, i|
+        if i != arr.length - 1
+            answer << num + arr[i+1]
+        end
+    end
+    answer
+end

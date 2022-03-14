@@ -270,3 +270,15 @@ def sum_ele(arr)
     end
     answer
 end
+
+
+# Write a method all_else_equal that takes in an array of numbers. The method should return the element of the array
+# that is equal to half of the sum of all elements of the array. If there is no such element, the method should return nil.
+def all_else_equal(arr)
+    sum = 0
+    arr.each { |num| sum += num }
+    arr.each do |ele|
+        return ele if sum / 2 == ele
+    end
+    nil
+end

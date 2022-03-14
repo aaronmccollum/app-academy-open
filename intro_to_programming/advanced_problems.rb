@@ -196,7 +196,28 @@ def caesar_cipher(str, num)
 end
   
 def shift_letter(char, length)
-    alphabet = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
     index = alphabet.index(char)
-    alphabet[index + length]
+    new_index = index + length
+    alphabet[new_index % 26]
+end
+
+
+# Write a method vowel_cipher that takes in a string and returns a new string where every vowel becomes the next vowel in the alphabet.
+def vowel_cipher(string)
+    vowels = "aeiou"
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    letters = string.split("")
+    
+    answer = letters.map do |char|
+        if !(vowels.include?(char))
+            char
+        else
+            index = vowels.index(char)
+            new_index = (index + 1) % 5
+            char = vowels[new_index]
+        end
+    end
+    
+    answer.join("")  
 end

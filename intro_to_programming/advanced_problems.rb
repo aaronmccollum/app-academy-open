@@ -221,3 +221,17 @@ def vowel_cipher(string)
     
     answer.join("")  
 end
+
+
+# Write a method that takes in a string and returns the number of times that the same letter repeats twice in a row.
+def double_letter_count(string)
+    count = 0
+    letters = string.split("")
+    letters.each_with_index do |char, i|
+        next if i == 0
+        if letters[i] == letters[i-1]
+            count += 1
+        end
+    end
+    count
+end

@@ -167,3 +167,20 @@ def summation(num)
     end
     sum
 end
+
+
+# The fibonacci sequence is a sequence of numbers whose first and second elements are 1.
+# Description: https://open.appacademy.io/learn/full-stack-online/intro-to-programming/fibonacci
+def fibonacci(length)
+    return [] if length == 0
+    return [1] if length == 1
+    answer = [1, 1]
+    i = 0
+    # Length - 2 because we already have the first two elements guaranteed in answer to set up the calculation
+    while i < (length - 2)
+        answer << answer[i] + answer[i+1]
+        i += 1
+    end
+  
+    answer
+end

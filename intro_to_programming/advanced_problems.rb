@@ -184,3 +184,19 @@ def fibonacci(length)
   
     answer
 end
+
+
+# Write a method caesar_cipher that takes in a string and a number. The method should return a new string
+# where every character of the original is shifted num characters in the alphabet.
+def caesar_cipher(str, num)
+    answer = Array.new
+    letters = str.split("")
+    letters.each { |char| answer << shift_letter(char, num) }
+    answer.join("")
+end
+  
+def shift_letter(char, length)
+    alphabet = "abcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyz"
+    index = alphabet.index(char)
+    alphabet[index + length]
+end

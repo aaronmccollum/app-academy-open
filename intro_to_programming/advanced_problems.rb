@@ -282,3 +282,17 @@ def all_else_equal(arr)
     end
     nil
 end
+
+
+# Write a method anagrams? that takes in two words and returns a boolean indicating whether or not the words are anagrams.
+# Anagrams are words that contain the same characters but not necessarily in the same order. Solve this without using .sort
+def anagrams?(word1, word2)
+    word1_hash = Hash.new(0)
+    word2_hash = Hash.new(0)
+    
+    word1.each_char { |char| word1_hash[char] += 1 }
+    word2.each_char { |char| word2_hash[char] += 1 }
+    
+    return true if word1_hash == word2_hash
+    false
+end

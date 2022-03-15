@@ -324,3 +324,27 @@ def remove_first_consonants(word)
     end
     answer_word.join("")
 end  
+
+
+# Same Char Collapse
+# Description: https://open.appacademy.io/learn/full-stack-online/intro-to-programming/same-char-collapse
+def same_char_collapse(str)
+    while str.length > 2
+        str = remove_same_char(str)
+    end
+    str
+end
+  
+def remove_same_char(str)
+    arr = str.split("")
+    answer = Array.new()
+    i = 1
+    while i <= arr.length
+        if arr[i] == arr[i-1]
+            arr.delete_at(i)
+            arr.delete_at(i-1)
+        end
+        i += 1
+    end
+    arr.join("")
+end

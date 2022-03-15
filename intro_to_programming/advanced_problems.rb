@@ -296,3 +296,31 @@ def anagrams?(word1, word2)
     return true if word1_hash == word2_hash
     false
 end
+
+
+# Write a method consonant_cancel that takes in a sentence and returns a new sentence where every word begins with it's first vowel.
+def consonant_cancel(sentence)
+    words = sentence.split(" ")
+    answer = words.map { |word| remove_first_consonants(word) }
+    answer.join(" ")
+end
+  
+def remove_first_consonants(word)
+    vowels = "aeiou"
+    letters = word.split("")
+    answer_word = Array.new()
+    
+    letters.each do |char|
+        if vowels.include?(char)
+            i = letters.index(char)
+            while i < letters.length
+                answer_word << letters[i]
+                i += 1
+            end
+            break
+        else
+            next
+        end
+    end
+    answer_word.join("")
+end  
